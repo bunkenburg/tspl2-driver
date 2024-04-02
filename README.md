@@ -102,9 +102,9 @@ tsplConnectionClient.shutdown();
 This library also has a nice listener pattern to receive notifications 
 for Data and Network. 
 
-Implement [DataListener](src/main/java/org/fintrace/core/drivers/tspl/listeners/DataListener.java) to listen for data related events from printer.
+Implement [DataListener](src/main/java/cat/inspiracio/core/drivers/tspl/listeners/DataListener.java) to listen for data related events from printer.
 
-Implement [ClientListener](src/main/java/org/fintrace/core/drivers/tspl/listeners/ClientListener.java) to listen for the network related events.
+Implement [ClientListener](src/main/java/cat/inspiracio/core/drivers/tspl/listeners/ClientListener.java) to listen for the network related events.
 
 
 Other documentation
