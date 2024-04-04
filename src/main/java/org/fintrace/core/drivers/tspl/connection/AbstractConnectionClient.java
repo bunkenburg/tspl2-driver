@@ -91,7 +91,7 @@ public abstract class AbstractConnectionClient implements TSPLConnectionClient {
     /**
      * Notifies all the dataListeners about the received message.
      *
-     * @param message
+     * @param message ...
      */
     protected void notifyMessageReceived(String message) {
         dataListeners.forEach(dataListener -> listenerExecutorService.execute(() ->
@@ -102,7 +102,7 @@ public abstract class AbstractConnectionClient implements TSPLConnectionClient {
     /**
      * Notifies all the dataListeners about the submitted message.
      *
-     * @param message
+     * @param message ...
      */
     protected void notifyMessageSent(String message) {
         dataListeners.forEach(dataListener -> listenerExecutorService.execute(() ->
@@ -113,8 +113,8 @@ public abstract class AbstractConnectionClient implements TSPLConnectionClient {
     /**
      * Notifies all the dataListeners about the failure to send message.
      *
-     * @param exception
-     * @param messageToSend
+     * @param exception ...
+     * @param messageToSend ...
      */
     protected void notifyMessageSendFailed(final ConnectionClientException exception,
                                            final String messageToSend) {

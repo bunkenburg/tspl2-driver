@@ -23,9 +23,7 @@ package org.fintrace.core.drivers.tspl.commands.values;
 public interface CommandValues<T> {
 
     /**
-     * returns the TSPL2 comman's value.
-     *
-     * @return command value
+     * @return the TSPL2 command's value.
      */
     T getCommandValue();
 }

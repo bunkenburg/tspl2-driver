@@ -26,17 +26,10 @@ import java.util.stream.Collectors;
 /**
  * @author Venkaiah Chowdary Koneru
  */
-@Builder
-@Data
-public class TSPLLabel {
+@Builder @Data public class TSPLLabel {
 
-    @Singular
-    private List<TSPLCommand> elements;
+    @Singular private List<TSPLCommand> elements;
 
-    /**
-     *
-     * @return
-     */
     public String getTsplCode() {
         return elements.stream().map(TSPLCommand::getCommand).collect(Collectors.joining(""));
     }

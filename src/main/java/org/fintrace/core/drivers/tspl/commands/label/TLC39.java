@@ -26,13 +26,11 @@ import static org.fintrace.core.drivers.tspl.DriverConstants.*;
  * This command draws TLC39, TCIF Linked Bar Code 3 of 9, barcode.<br>
  * <b>Syntax</b><br>
  * TLC39 x,y,rotation,[height,]narrow,]wide,]cellwidth,]cellheight,] "ECI number,
- * Serial number & additional data"
+ * Serial number &amp; additional data"
  *
  * @author Venkaiah Chowdary Koneru
  */
-@Data
-@Builder
-public class TLC39 implements TSPLCommand {
+@Data @Builder public class TLC39 implements TSPLCommand {
 
     /**
      * the x-coordinate

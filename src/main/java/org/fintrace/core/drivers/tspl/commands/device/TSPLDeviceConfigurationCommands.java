@@ -47,7 +47,7 @@ public enum TSPLDeviceConfigurationCommands implements TSPLCommand {
     PARTIAL_CUTTER_BATCH(DeviceConfigCommand.PARTIAL_CUTTER, PartialCutterValues.BATCH),
 
     /**
-     * Set number of printing labels per cut. 0<= pieces <=65535.
+     * Set number of printing labels per cut. 0 &le; pieces &le; 65535.
      * Shall append the this command with the number of pieces.
      */
     PARTIAL_CUTTER_PIECES(DeviceConfigCommand.PARTIAL_CUTTER, PartialCutterValues.Pieces),
@@ -62,10 +62,8 @@ public enum TSPLDeviceConfigurationCommands implements TSPLCommand {
      */
     CUTTER_BATCH(DeviceConfigCommand.CUTTER, PartialCutterValues.BATCH),
 
-    /**
-     * Set number of printing labels per cut. 0<= pieces <=65535.
-     * Shall append the this command with the number of pieces.
-     */
+    /** Set number of printing labels per cut. 0 le; pieces &le; 65535.
+     * Shall append the this command with the number of pieces. */
     CUTTER_PIECES(DeviceConfigCommand.CUTTER, PartialCutterValues.Pieces),
 
     /**

@@ -25,31 +25,25 @@ import static org.fintrace.core.drivers.tspl.DriverConstants.*;
 /**
  * This command defines a 2D Maxicode.<br>
  * <b>Syntax</b>
- * <table valign="top">
- * <tr>
- * <td colspan="2">MAXICODE x,y,mode,[class,country,post,Lm,] "content"</td>
- * </tr>
- * <tr>
- * <td>MAXICODE x,y,mode,class,country,postal code, "content"</td>
- * <td>For mode 2 or 3,<br>
- * If country is 840, the postal code is in 99999,9999 format.<br>
- * For other countries, the code is up to 6 alphanumeric characters.
- * </td>
- * </tr>
- * <tr>
- * <td>MAXICODE x,y,mode,[Lm,] "content"</td>
- * <td>For mode 4,5,6,<br>
- * AIM special format is supported.<br>
- * <b><i>Mode 6 is not supported in TSPL2 printer firmware.</i></b>
- * </td>
- * </tr>
- * </table>
+ * <ul>
+ *  <li>
+ *      <code>MAXICODE x,y,mode,[class,country,post,Lm,] "content"</code>
+ *  <li>
+ *      <code>MAXICODE x,y,mode,class,country,postal code, "content"</code>
+ *      For mode 2 or 3,<br>
+ *          If country is 840, the postal code is in 99999,9999 format.<br>
+ *          For other countries, the code is up to 6 alphanumeric characters.
+ *  <li>
+ *      <code>MAXICODE x,y,mode,[Lm,] "content"</code>
+ *      For mode 4,5,6,<br>
+ *          AIM special format is supported.<br>
+ *          <b><i>Mode 6 is not supported in TSPL2 printer firmware.</i></b>
+ * </ul>
+ *
  *
  * @author Venkaiah Chowdary Koneru
  */
-@Data
-@Builder
-public class MaxiCode implements TSPLCommand {
+@Data @Builder public class MaxiCode implements TSPLCommand {
 
     /**
      * X-coordinate of the starting point (in dot)

@@ -27,30 +27,10 @@ import static org.fintrace.core.drivers.tspl.DriverConstants.LF;
  * <p><b><i>Syntax</i></b><br>
  * SELFTEST [page]
  * </p>
- * <table border="0" valign="top">
- * <tr>
- * <th>Parameter</th>
- * <th>Description</th>
- * </tr>
- * <tr>
- * <td>Page</td>
- * <td>
- * <b>omitted:</b> Print a self-test page with whole printer information.<br>
- * <b>PATTERN:</b> Print a pattern to check the status of print head heat line.<br>
- * <b>ETHERNET:</b> Print a self-test page with Ethernet settings.<br>
- * <b>WLAN:</b> Print a self-test page with Wi-Fi settings.<br>
- * <b>RS232:</b> Print a self-test page with RS-232 settings.<br>
- * <b>SYSTEM:</b> Print a self-test page with printer settings.<br>
- * <b>Z:</b> Print a self-test page with emulated language settings.<br>
- * </td>
- * </tr>
- * </table>
  *
  * @author Venkaiah Chowdary Koneru
  */
-@Data
-@Builder
-public class PrinterInfo implements TSPLCommand {
+@Data @Builder public class PrinterInfo implements TSPLCommand {
 
     /**
      * if omitted, prints a self-test page with whole printer information.

@@ -20,20 +20,12 @@ package org.fintrace.core.drivers.tspl.exceptions;
  */
 public class LabelParserException extends RuntimeException {
     private static final long serialVersionUID = -7032802716798268348L;
-    private String message;
 
-    /**
-     *
-     */
     public LabelParserException() {
         super();
     }
 
-    /**
-     * @param message
-     */
     public LabelParserException(String message) {
         super(message);
-        this.message = message;
     }
 }

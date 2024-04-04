@@ -23,9 +23,8 @@ package org.fintrace.core.drivers.tspl.commands;
 public interface TSPLCommand {
 
     /**
-     * returns the TSPL2 command
+     * @return  the TSPL2 command
      *
-     * @return
      */
     String getCommand();
 }

@@ -27,27 +27,6 @@ import static org.fintrace.core.drivers.tspl.commands.label.TSPLLabelUtils.hasFl
  * <p>
  * <b>Syntax</b><br>
  * BOX x,y,x_end,y_end,line thickness[,radius]<br>
- * <p>
- * x Specify x-coordinate of upper left corner (in dots)<br>
- * y Specify y-coordinate of upper left corner (in dots)<br>
- * x_end Specify x-coordinate of lower right corner (in dots)<br>
- * y_end Specify y-coordinate of lower right corner (in dots)<br>
- * line thickness Line thickness (in dots)<br>
- * radius Optional. Specify the round corner. Default is 0.<br>
- * <p>
- * <b>Note:<br>
- * <ul>
- * <li>200 DPI : 1 mm = 8 dots<br>
- * 300 DPI : 1 mm = 12 dots
- * </li>
- * <li>
- * Recommended max. thickness of box is 12 mm at 4” width. Thickness of box larger than 12
- * mm may damage the power supply and affect the print quality. Max. print ratio is different
- * for each printer model. Desktop and industrial printer print ratio is limited to 20% and 30%
- * respectively
- * </li>
- * </ul>
- * </b>
  *
  * @author Venkaiah Chowdary Koneru
  */

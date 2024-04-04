@@ -230,7 +230,7 @@ public enum BarcodeType {
     /**
      * barcode type.
      */
-    private String codeType;
+    private final String codeType;
 
     /**
      * @param codeType
@@ -239,9 +239,6 @@ public enum BarcodeType {
         this.codeType = codeType;
     }
 
-    /**
-     * @return
-     */
     public String getCodeType() {
         return codeType;
     }

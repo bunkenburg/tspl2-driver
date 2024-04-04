@@ -26,28 +26,6 @@ import static org.fintrace.core.drivers.tspl.DriverConstants.*;
  * This command clears a specified region in the image buffer.<br>
  * <b>Syntax</b><br>
  * ERASE x,y,x_width,y_height<br>
- * <table valign="top" border="1">
- * <tr>
- * <th>Parameter</th>
- * <th>Description</th>
- * </tr>
- * <tr>
- * <td>x</td>
- * <td>The x-coordinate of the starting point (in dots)</td>
- * </tr>
- * <tr>
- * <td>y</td>
- * <td>The y-coordinate of the starting point (in dots)</td>
- * </tr>
- * <tr>
- * <td>x_width</td>
- * <td>The region width in x-axis direction (in dots)</td>
- * </tr>
- * <tr>
- * <td>y_height</td>
- * <td>The region height in y-axis direction (in dots)</td>
- * </tr>
- * </table>
  *
  * @author Venkaiah Chowdary Koneru
  */

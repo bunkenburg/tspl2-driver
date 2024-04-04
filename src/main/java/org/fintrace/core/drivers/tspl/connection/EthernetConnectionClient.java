@@ -51,20 +51,25 @@ import static org.fintrace.core.drivers.tspl.DriverConstants.LF_BYTES;
  *
  * @author Venkaiah Chowdary Koneru
  */
-@Slf4j
-public class EthernetConnectionClient extends AbstractConnectionClient
+@Slf4j public class EthernetConnectionClient extends AbstractConnectionClient
         implements TSPLConnectionClient {
+
     private final String host;
+
     private final int port;
-    private ExecutorService connectionExecutorService = Executors.newSingleThreadExecutor();
+
+    private final ExecutorService connectionExecutorService = Executors.newSingleThreadExecutor();
+
     private SocketChannel channel;
+
     private Selector selector;
 
-    // The buffer into which we'll read data when it's available
-    private ByteBuffer readBuffer = ByteBuffer.allocate(8192);
-    private ByteBuffer readDataBuffer = ByteBuffer.allocate(8192);
+    /** The buffer into which we'll read data when it's available */
+    private final ByteBuffer readBuffer = ByteBuffer.allocate(8192);
 
-    private Runnable connectionRunnable = new Runnable() {
+    private final ByteBuffer readDataBuffer = ByteBuffer.allocate(8192);
+
+    private final Runnable connectionRunnable = new Runnable() {
         public void run() {
             if (!isConnected) {
                 try {
@@ -118,8 +123,7 @@ public class EthernetConnectionClient extends AbstractConnectionClient
         }
     };
 
-    /**
-     * Constructor
+    /** Constructor
      *
      * @param host The zebra printer host address or IP address.
      * @param port The port number on zebra printer that will accept the
@@ -133,52 +137,41 @@ public class EthernetConnectionClient extends AbstractConnectionClient
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void init() {
+    @Override public void init() {
         log.info("Initialized");
     }
 
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void connect() {
+    @Override public void connect() {
         if (isConnected || alive)
             return;
-
         connectionExecutorService.execute(connectionRunnable);
     }
 
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void disconnect() {
+    @Override public void disconnect() {
         if (!alive) {
             return;
         }
-
         alive = false;
     }
 
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void shutdown() {
-    }
+    @Override public void shutdown() { }
 
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void send(TSPLLabel label) {
+    @Override public void send(TSPLLabel label) {
         send(label.getTsplCode());
     }
 
-    /**
-     * @param message
-     */
     protected void send(byte[] message) {
         if (!isConnected) {
             throw new PrinterException("Printer is not connected");
@@ -216,9 +209,9 @@ public class EthernetConnectionClient extends AbstractConnectionClient
         SocketChannel channel = (SocketChannel) key.channel();
         try {
             readBuffer.clear();
-            int readed = channel.read(readBuffer);
+            int red = channel.read(readBuffer);
             readBuffer.flip();
-            while (readed > 0 && readBuffer.hasRemaining()) {
+            while (red > 0 && readBuffer.hasRemaining()) {
                 byte b = readBuffer.get();
                 if (b != CR_BYTES[0] && b != LF_BYTES[0]) {
                     readDataBuffer.put(b);

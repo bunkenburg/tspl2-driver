@@ -28,25 +28,19 @@ public final class TSPLLabelUtils {
     /**
      * private to prevent un-necessary instantiation
      */
-    private TSPLLabelUtils() {
-    }
+    private TSPLLabelUtils() { }
 
-    /**
-     * parses the content and replaces any <<< >>> occurrences
-     *
-     * @param labelTemplate
-     * @param parameters
-     * @return
-     */
+    /** Parses the content and replaces any &lt;&lt;&lt; &gt;&gt;&gt; occurrences.
+     * @param labelTemplate ...
+     * @param parameters ...
+     * @return ... */
     public static byte[] parseAndGetLabelContent(String labelTemplate,
                                                  Map<String, String> parameters) {
-
         String localTemplate = labelTemplate;
         for (Map.Entry<String, String> entry : parameters.entrySet()) {
             localTemplate = localTemplate.replaceAll("<<<" + entry.getKey()
                     + ">>>", entry.getValue());
         }
-
         return localTemplate.getBytes(US_ASCII);
     }
 

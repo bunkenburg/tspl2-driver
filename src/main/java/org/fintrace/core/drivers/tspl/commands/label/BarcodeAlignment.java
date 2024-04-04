@@ -46,7 +46,7 @@ public enum BarcodeAlignment {
      */
     RIGHT(3);
 
-    private int alignment;
+    private final int alignment;
 
     /**
      * @param alignment
@@ -55,9 +55,6 @@ public enum BarcodeAlignment {
         this.alignment = alignment;
     }
 
-    /**
-     * @return
-     */
     public int getAlignment() {
         return alignment;
     }

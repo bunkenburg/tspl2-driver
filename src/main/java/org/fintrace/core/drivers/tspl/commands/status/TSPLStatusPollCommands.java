@@ -70,7 +70,7 @@ public enum TSPLStatusPollCommands implements TSPLCommand {
      * &lt;ESC&gt;!S
      * <p><br>
      * <b>Response Format</b><br>
-     * &lt;STX&gt;[4-byte status]&lt;ETX&gt;&lt;CR&gt;&lt;LF><br><br>
+     * &lt;STX&gt;[4-byte status]&lt;ETX&gt;&lt;CR&gt;&lt;LF&gt;<br><br>
      * <b>Status Byte #1: message</b><br>
      * Bit 7 Bit 6 Bit 5 Bit 4 Bit 3 Bit 2 Bit 1 Bit 0 Hex ASCII Char Meaning<br>
      * 0 1 0 0 0 0 0 0 40 64 @ Normal<br>

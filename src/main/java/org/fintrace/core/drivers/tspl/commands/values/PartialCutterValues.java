@@ -34,20 +34,16 @@ public enum PartialCutterValues implements CommandValues<String> {
      */
     BATCH,
 
-    /**
-     * Set number of printing labels per cut. 0<= pieces <=65535.
-     */
+    /** Set number of printing labels per cut. 0 &le; pieces &le; 65535.*/
     Pieces;
 
     /**
      * {@inheritDoc}
      */
-    @Override
-    public String getCommandValue() {
+    @Override public String getCommandValue() {
         if (this == Pieces) {
             return "";
         }
-
         return this.name();
     }
 }

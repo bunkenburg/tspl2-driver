@@ -106,19 +106,21 @@ public interface TSPLConnectionClient {
      */
     void removeClientListener(ClientListener listener);
 
-    /**
-     * Add a DataListener to this client. This method will not check for duplicated listener.
+    /** Add a DataListener to this client. This method will not check for duplicated listener.
+     * @param listener ...
      */
     void addDataListener(DataListener listener);
 
-    /**
-     * Remove the previously added DataListener.
+    /** Remove the previously added DataListener.
      * If the specified listener doesn't exist, the method will not do anything.
+     * @param listener ...
      */
     void removeDataListener(DataListener listener);
 
     /** Sets the charset for transmitting Strings as bytes.
-     * Does not add the corresponding CODEPAGE command. */
+     * Does not add the corresponding CODEPAGE command.
+     * @param charset ... */
     void setCharset(Charset charset);
+
     Charset getCharset();
 }

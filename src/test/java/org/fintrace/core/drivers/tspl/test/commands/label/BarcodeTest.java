@@ -30,28 +30,22 @@ import org.junit.jupiter.api.Test;
 public class BarcodeTest {
     private Barcode barcode;
 
-    @BeforeEach
-    public void initialize() {
+    @BeforeEach public void initialize() {
         this.barcode = Barcode.builder().build();
     }
 
-    @Test
-    public void testDefault() {
-        LabelParserException exception = Assertions.assertThrows(LabelParserException.class,
-                () -> barcode.getCommand());
+    @Test public void testDefault() {
+        LabelParserException exception = Assertions.assertThrows(LabelParserException.class, () -> barcode.getCommand());
         Assertions.assertEquals("BARCODE: x and y positions are required", exception.getMessage());
     }
 
-    @Test
-    public void testNullY() {
+    @Test public void testNullY() {
         barcode.setXCoordinate(80F);
-        LabelParserException exception = Assertions.assertThrows(LabelParserException.class,
-                () -> barcode.getCommand());
+        LabelParserException exception = Assertions.assertThrows(LabelParserException.class, () -> barcode.getCommand());
         Assertions.assertEquals("BARCODE: x and y positions are required", exception.getMessage());
     }
 
-    @Test
-    public void testBarcodeWithDefaults() {
+    @Test public void testBarcodeWithDefaults() {
         barcode.setXCoordinate(380F);
         barcode.setYCoordinate(220F);
         barcode.setCodeType(BarcodeType.CODE_128);
@@ -62,8 +56,7 @@ public class BarcodeTest {
         Assertions.assertEquals("BARCODE 380,220, \"128\",100,0,0,1,1,\"123456\"\n", barcode.getCommand());
     }
 
-    @Test
-    public void testBarcode() {
+    @Test public void testBarcode() {
         barcode.setXCoordinate(380F);
         barcode.setYCoordinate(220F);
         barcode.setCodeType(BarcodeType.CODE_128);

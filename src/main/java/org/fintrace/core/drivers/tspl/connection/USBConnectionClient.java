@@ -150,14 +150,10 @@ public class USBConnectionClient extends AbstractConnectionClient implements Usb
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void send(TSPLLabel label) {
+    @Override public void send(TSPLLabel label) {
         send(label.getTsplCode());
     }
 
-    /**
-     * @param message
-     */
 
     protected void send(byte[] message) {
         if (!isConnected) {
@@ -174,8 +170,7 @@ public class USBConnectionClient extends AbstractConnectionClient implements Usb
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void usbDeviceDetached(UsbDeviceEvent event) {
+    @Override public void usbDeviceDetached(UsbDeviceEvent event) {
         clientListeners.forEach((clientListener) -> listenerExecutorService.execute(() ->
                 clientListener.connectionLost(USBConnectionClient.this)
         ));
@@ -184,18 +179,12 @@ public class USBConnectionClient extends AbstractConnectionClient implements Usb
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void errorEventOccurred(UsbDeviceErrorEvent event) {
-
-    }
+    @Override public void errorEventOccurred(UsbDeviceErrorEvent event) { }
 
     /**
      * {@inheritDoc}
      */
-    @Override
-    public void dataEventOccurred(UsbDeviceDataEvent event) {
-
-    }
+    @Override public void dataEventOccurred(UsbDeviceDataEvent event) { }
 
     /**
      * Retrieves the USB device from the given root hub based on the vendor id.
@@ -299,14 +288,12 @@ public class USBConnectionClient extends AbstractConnectionClient implements Usb
     private UsbPipe getWritePipe() {
         UsbPipe localWritePipe = usbInterface.getUsbEndpoint((byte) inPipeAddress).getUsbPipe();
         localWritePipe.addUsbPipeListener(new UsbPipeListener() {
-            @Override
-            public void errorEventOccurred(UsbPipeErrorEvent event) {
+            @Override public void errorEventOccurred(UsbPipeErrorEvent event) {
                 notifyMessageSendFailed(new ConnectionClientException(
                         event.getUsbException().getMessage()), "");
             }
 
-            @Override
-            public void dataEventOccurred(UsbPipeDataEvent event) {
+            @Override public void dataEventOccurred(UsbPipeDataEvent event) {
                 notifyMessageSent(new String(event.getData(), US_ASCII));
             }
         });
